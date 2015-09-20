@@ -1,0 +1,35 @@
+$-sprite-2x-icon-facebook: 0px 0px 0px 0px 44px 44px 92px 92px '../../../dist/img/common/sprites@2x.png';
+$-sprite-2x-icon-googleplus: 48px 0px -48px 0px 44px 44px 92px 92px '../../../dist/img/common/sprites@2x.png';
+$-sprite-2x-icon-more-article: 48px 48px -48px -48px 24px 18px 92px 92px '../../../dist/img/common/sprites@2x.png';
+$-sprite-2x-icon-more-menu: 48px 70px -48px -70px 24px 18px 92px 92px '../../../dist/img/common/sprites@2x.png';
+$-sprite-2x-icon-twitter: 0px 48px 0px -48px 44px 44px 92px 92px '../../../dist/img/common/sprites@2x.png';
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite-background-size($sprite) {
+  background-size: nth($sprite, 7) nth($sprite, 8);
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
