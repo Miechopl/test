@@ -9,6 +9,7 @@ module.exports = function(grunt) {
       dest: '<%= xh.dist %>/img/common/sprites@1x.png',
       destCss: '<%= xh.src %>/scss/setup/_sprites@1x.scss',
       cssTemplate: '<%= xh.src %>/scss/setup/_sprites.scss.mustache',
+      imgPath: '../img/common/sprites@1x.png',
       algorithm: 'binary-tree',
       engine: 'pngsmith',
       padding: 2,
@@ -16,8 +17,8 @@ module.exports = function(grunt) {
         sprite.name = 'sprite-1x-' + sprite.name;
       },
       cssOpts: {
-        // map: 'sprite-1x'
-        functions: false
+        map: 'sprite-1x'//,
+        // functions: false
       }
     },
     dist2x: {
@@ -25,6 +26,7 @@ module.exports = function(grunt) {
       dest: '<%= xh.dist %>/img/common/sprites@2x.png',
       destCss: '<%= xh.src %>/scss/setup/_sprites@2x.scss',
       cssTemplate: '<%= xh.src %>/scss/setup/_sprites.scss.mustache',
+      imgPath: '../img/common/sprites@2x.png',
       algorithm: 'binary-tree',
       engine: 'pngsmith',
       padding: 4,
@@ -32,8 +34,8 @@ module.exports = function(grunt) {
         sprite.name = 'sprite-2x-' + sprite.name;
       },
       cssOpts: {
-        // map: 'sprite-2x',
-        // functions: false
+        map: 'sprite-2x',
+        functions: false
       }
     }
   });
